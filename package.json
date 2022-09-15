@@ -1,0 +1,18 @@
+{
+  "name": "cicd",
+  "version": "1.0.0",
+  "description": "",
+  "main": "index.js",
+  "scripts": {
+    "cy:adminLogin": "cypress run --spec 'cypress/e2e/adminLogin.cy.js' --record --key 1a0a1430-55a8-4f4d-9309-7ebd7be096f3",
+    "cy:startPageClient": "cypress run --spec 'cypress/e2e/startPageClient.cy.js' --record --key 1a0a1430-55a8-4f4d-9309-7ebd7be096f3",
+    "cy:parallel": "npm run --parallel cy:adminLogin -- --browser chrome --group Spec1 --ci-build-id 1 & npm run cy:startPageClient -- --browser chrome --group Spec2 --ci-build-id 1"
+  },
+  "keywords": [],
+  "author": "alexander",
+  "license": "ISC",
+  "devDependencies": {
+    "cypress": "^10.7.0",
+    "eslint": "^8.23.1"
+  }
+}
